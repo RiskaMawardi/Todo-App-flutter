@@ -26,11 +26,11 @@ class TaskTile extends StatelessWidget {
             child: Row(
               children: [
                 CircleContainer(
-                  color: tasks.category.color.withOpacity(backgroundOpacity),
+                  color: tasks.category.color.withValues(alpha: backgroundOpacity),
                   child: Center(
                     child: Icon(
                       tasks.category.icon,
-                      color: tasks.category.color.withOpacity(iconOpacity),
+                      color: tasks.category.color.withValues(alpha: iconOpacity),
                     ),
                   ),
                 ),
@@ -62,6 +62,6 @@ class TaskTile extends StatelessWidget {
                 ),
               ],
             ),
-         );;
+         );
   }
 }
