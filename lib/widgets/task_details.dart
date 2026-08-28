@@ -19,7 +19,7 @@ class TaskDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CircleContainer(
-            color: task.category.color.withOpacity(0.3),
+            color: task.category.color.withValues(alpha: 0.3),
             child: Icon(
               task.category.icon,
               color: task.category.color,

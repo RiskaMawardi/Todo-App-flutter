@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo/config/routes/routes_provider.dart';
 import 'package:todo/config/theme/app_theme.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class TodoApp extends ConsumerWidget {
   const TodoApp({super.key});

@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:path/path.dart';
 import 'package:todo/utils/utils.dart';
 
 class CommonTextField extends StatelessWidget {
-  const CommonTextField({super.key, required this.title, required this.hintText,  this.controller, this.maxLines});
+  const CommonTextField({
+    super.key,
+    required this.title,
+    required this.hintText,
+    this.controller,
+    this.maxLines,
+    this.suffixIcon,  this.readonly = false,
+  });
 
   final String title;
   final String hintText;
   final TextEditingController? controller;
   final int? maxLines;
+  final Widget? suffixIcon;
+  final bool readonly;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          title,
-          style: context.textTheme.titleLarge,
-        ),
+        Text(title, style: context.textTheme.titleLarge),
         const Gap(10),
         TextField(
+          readOnly: readonly,
           controller: controller,
-          onTapOutside: (event){
+          onTapOutside: (event) {
             FocusManager.instance.primaryFocus?.unfocus();
           },
           maxLines: maxLines,
           decoration: InputDecoration(
             hintText: hintText,
+            suffixIcon: suffixIcon,
           ),
-          onChanged: (value){},
+          onChanged: (value) {},
         ),
       ],
     );
